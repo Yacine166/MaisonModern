@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:maison_moderne/core/constant/routes.dart';
 import 'package:maison_moderne/core/localization/changelocal.dart';
-import 'package:maison_moderne/view/widget/language/custom_button.dart';
+import 'package:maison_moderne/view/widget/language/custom_button_lang.dart';
 
 class Language extends GetView<LocaleController> {
   const Language({super.key});

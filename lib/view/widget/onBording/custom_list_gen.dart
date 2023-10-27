@@ -22,8 +22,8 @@ class CustomListGenOnBoarding extends StatelessWidget {
               margin: const EdgeInsets.all(8.0),
               decoration: BoxDecoration(
                 color: controller.currentPage == index
-                    ? AppColor.primaryColor
-                    : const Color.fromARGB(255, 150, 246, 135),
+                    ? AppColor.colorGreen
+                    : const Color.fromARGB(87, 49, 175, 146),
                 borderRadius: BorderRadius.circular(6.0),
               ),
             ),

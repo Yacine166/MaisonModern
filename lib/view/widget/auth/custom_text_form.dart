@@ -5,19 +5,22 @@ class CustomTextForm extends StatelessWidget {
       {super.key,
       required this.textForm,
       required this.textHint,
-      required this.icon,
-      this.myController});
+      this.myController,
+      required this.iconData,
+      required this.boolObscureText});
   final String textForm;
   final String textHint;
-  final IconData icon;
+  final IconData iconData;
+  final bool boolObscureText;
   final TextEditingController? myController;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      obscureText: boolObscureText,
       controller: myController,
       decoration: InputDecoration(
         floatingLabelBehavior: FloatingLabelBehavior.always,
-        suffixIcon: const Icon(Icons.email_outlined),
+        suffixIcon: Icon(iconData),
         hintStyle: const TextStyle(fontSize: 15),
         hintText: textHint,
         contentPadding:

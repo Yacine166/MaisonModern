@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:maison_moderne/controller/auth/login_controller.dart';
+import 'package:maison_moderne/controller/auth/signup_controller.dart';
 import 'package:maison_moderne/core/constant/color.dart';
 import 'package:maison_moderne/view/widget/auth/custom_text_form.dart';
 import 'package:maison_moderne/view/widget/auth/custom_text_login_signup.dart';
 import 'package:maison_moderne/view/widget/auth/custom_text_min_title.dart';
-import 'package:maison_moderne/view/widget/auth/login_image.dart';
 
 import '../../widget/auth/custom_button.dart';
 import '../../widget/auth/custom_text_title.dart';
 
-class Login extends StatelessWidget {
-  const Login({super.key});
+class SingUp extends StatelessWidget {
+  const SingUp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    LoginControllerImp controller = Get.put(LoginControllerImp());
+    SignUpControllerImp controller = Get.put(SignUpControllerImp());
 
     return Scaffold(
       appBar: AppBar(
@@ -24,21 +23,27 @@ class Login extends StatelessWidget {
         foregroundColor: AppColor.primaryColor,
         centerTitle: true,
         title: Text(
-          'Sing In',
+          'Sing Up',
           style: Theme.of(context).textTheme.displayLarge,
         ),
       ),
       body: Container(
-        padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 40),
+        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
         child: ListView(children: [
-          const LoginImage(),
-          const SizedBox(height: 30),
-          const CustomTextTitle(title: 'Welcome Back'),
+          const SizedBox(height: 10),
+          const CustomTextTitle(title: 'Create account'),
           const SizedBox(height: 30),
           const CustomTextMinTitle(
-              title:
-                  "Sing in with your email and password OR continue with social media"),
+              title: "Sing Up with your email and password "),
           const SizedBox(height: 70),
+          CustomTextForm(
+            myController: controller.usernameController,
+            textForm: 'Username',
+            textHint: 'Enter Your Username',
+            iconData: Icons.person_outline,
+            boolObscureText: false,
+          ),
+          const SizedBox(height: 30),
           CustomTextForm(
             myController: controller.emailController,
             textForm: 'Email',
@@ -48,33 +53,30 @@ class Login extends StatelessWidget {
           ),
           const SizedBox(height: 30),
           CustomTextForm(
+            myController: controller.phoneController,
+            textForm: 'Phone',
+            textHint: 'Enter Your Phone',
+            iconData: Icons.phone_android_outlined,
+            boolObscureText: false,
+          ),
+          const SizedBox(height: 30),
+          CustomTextForm(
               myController: controller.passwordController,
               textForm: 'Password',
               textHint: 'Enter Your Password',
               iconData: Icons.lock_outline,
               boolObscureText: true),
-          InkWell(
-            onTap: controller.goToForgetpassword,
-            child: const Text(
-              "Forget Password",
-              style: TextStyle(
-                  fontSize: 17,
-                  color: AppColor.textGrey,
-                  fontWeight: FontWeight.w600),
-              textAlign: TextAlign.end,
-            ),
-          ),
           CustomButtonAuth(
-            text: "Sing In",
+            text: "Sing Up",
             onPressed: () {},
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 30),
           TextLoginSingUp(
+            textQues: "Did you have account? ",
+            textGo: 'Sing In',
             onTap: () {
-              controller.goToSignup();
+              controller.goToLogin();
             },
-            textQues: "Don't have an account? ",
-            textGo: "Sign Up",
           ),
         ]),
       ),

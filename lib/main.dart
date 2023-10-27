@@ -5,7 +5,7 @@ import 'package:maison_moderne/core/localization/changelocal.dart';
 import 'package:maison_moderne/core/localization/translation.dart';
 import 'package:maison_moderne/core/services/services.dart';
 import 'package:maison_moderne/routes.dart';
-import 'package:maison_moderne/view/screen/language.dart';
+import 'package:maison_moderne/view/screen/auth/login.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -55,9 +55,9 @@ class MyApp extends StatelessWidget {
               fontSize: 18,
               fontWeight: FontWeight.bold,
             )),
-        colorScheme: ColorScheme.fromSeed(seedColor: AppColor.primaryColor),
+        colorScheme: ColorScheme.fromSeed(seedColor: AppColor.colorGreen),
       ),
-      home: const Language(),
+      home: const Login(),
       routes: routes,
     );
   }

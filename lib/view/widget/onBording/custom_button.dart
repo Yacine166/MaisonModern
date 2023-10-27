@@ -15,7 +15,7 @@ class CustomButtonOnBoarding extends GetView<OnBoardingControllerImp> {
           controller.nextPage();
         },
         padding: const EdgeInsets.symmetric(horizontal: 100),
-        color: AppColor.primaryColor,
+        color: AppColor.colorGreen,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15.0),
         ),
