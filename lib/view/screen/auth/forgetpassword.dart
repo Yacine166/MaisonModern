@@ -47,7 +47,9 @@ class ForgetPassword extends StatelessWidget {
           const SizedBox(height: 30),
           CustomButtonAuth(
             text: "Check",
-            onPressed: () {},
+            onPressed: () {
+              controller.goToVerifyCode();
+            },
           ),
           // const SizedBox(height: 10),
           // TextLoginSingUp(

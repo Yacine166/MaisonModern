@@ -1,20 +1,23 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:maison_moderne/core/constant/routes.dart';
 
-abstract class VerifyCodeController extends GetxController {}
+abstract class VerifyCodeController extends GetxController {
+  goToResetPassword();
+  checkCode();
+}
 
 class VerifyCodeControllerImp extends VerifyCodeController {
-  late TextEditingController emailController;
-
+  late String verifyCode;
   @override
   void onInit() {
-    emailController = TextEditingController();
     super.onInit();
   }
 
   @override
-  void dispose() {
-    emailController.dispose();
-    super.dispose();
+  goToResetPassword() {
+    Get.offNamed(AppRoutes.resetpassword);
   }
+
+  @override
+  checkCode() {}
 }

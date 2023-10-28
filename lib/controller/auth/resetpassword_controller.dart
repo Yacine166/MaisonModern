@@ -1,29 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:maison_moderne/core/constant/routes.dart';
 
 abstract class ResetPasswordController extends GetxController {
-  goToVerifyCode();
-  checkemail();
+  goToSuccessResetPassword();
+  resetPassword();
 }
 
 class ResetPasswordControllerImp extends ResetPasswordController {
-  late TextEditingController emailController;
+  late TextEditingController passwordController;
+  late TextEditingController repasswordController;
 
   @override
   void onInit() {
-    emailController = TextEditingController();
+    passwordController = TextEditingController();
+    repasswordController = TextEditingController();
     super.onInit();
   }
 
   @override
   void dispose() {
-    emailController.dispose();
+    passwordController.dispose();
+    repasswordController.dispose();
     super.dispose();
   }
 
   @override
-  checkemail() {}
+  resetPassword() {}
 
   @override
-  goToVerifyCode() {}
+  goToSuccessResetPassword() {
+    Get.offNamed(AppRoutes.successresetpassword);
+  }
 }

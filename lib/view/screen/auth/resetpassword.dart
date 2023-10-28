@@ -23,7 +23,7 @@ class ResetPassword extends StatelessWidget {
         foregroundColor: AppColor.primaryColor,
         centerTitle: true,
         title: Text(
-          'Forget Password',
+          'New Password',
           style: Theme.of(context).textTheme.displayLarge,
         ),
       ),
@@ -31,32 +31,32 @@ class ResetPassword extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 40),
         child: ListView(children: [
           const SizedBox(height: 30),
-          const CustomTextTitle(title: 'check your email '),
+          const CustomTextTitle(title: 'Reset Password'),
           const SizedBox(height: 30),
-          const CustomTextMinTitle(
-              title: "Recover your password with checking your email "),
+          const CustomTextMinTitle(title: "Enter new password "),
           const SizedBox(height: 70),
           CustomTextForm(
-            myController: controller.emailController,
-            textForm: 'Email',
-            textHint: 'Enter Your Email',
-            iconData: Icons.email_outlined,
+            myController: controller.passwordController,
+            textForm: 'New Password',
+            textHint: 'Enter Your New Password',
+            iconData: Icons.lock_outline_rounded,
             boolObscureText: false,
           ),
-
+          const SizedBox(height: 30),
+          CustomTextForm(
+            myController: controller.repasswordController,
+            textForm: 'Password',
+            textHint: 'Enter Agin Your password',
+            iconData: Icons.lock_outline_rounded,
+            boolObscureText: false,
+          ),
           const SizedBox(height: 30),
           CustomButtonAuth(
-            text: "Check",
-            onPressed: () {},
+            text: "Save ",
+            onPressed: () {
+              controller.goToSuccessResetPassword();
+            },
           ),
-          // const SizedBox(height: 10),
-          // TextLoginSingUp(
-          //   onTap: () {
-          //     controller.goToSignup();
-          //   },
-          //   textQues: "Don't have an account? ",
-          //   textGo: "Sign Up",
-          // ),
         ]),
       ),
     );

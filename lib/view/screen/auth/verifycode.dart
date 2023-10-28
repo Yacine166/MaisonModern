@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
-import 'package:maison_moderne/controller/auth/verifyCode_controller.dart';
 import 'package:maison_moderne/core/constant/color.dart';
-import 'package:maison_moderne/view/widget/auth/custom_text_form.dart';
 import 'package:maison_moderne/view/widget/auth/custom_text_min_title.dart';
 
-import '../../widget/auth/custom_button.dart';
+import '../../../controller/auth/verifycode_controller.dart';
 import '../../widget/auth/custom_text_title.dart';
 
 class VerifyCode extends StatelessWidget {
@@ -22,7 +21,7 @@ class VerifyCode extends StatelessWidget {
         foregroundColor: AppColor.primaryColor,
         centerTitle: true,
         title: Text(
-          'Forget Password',
+          'Check code',
           style: Theme.of(context).textTheme.displayLarge,
         ),
       ),
@@ -30,32 +29,28 @@ class VerifyCode extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 40),
         child: ListView(children: [
           const SizedBox(height: 30),
-          const CustomTextTitle(title: 'check your email '),
+          const CustomTextTitle(title: 'Verify Code'),
           const SizedBox(height: 30),
           const CustomTextMinTitle(
-              title: "Recover your password with checking your email "),
+              title: "Please enter The Digit Code send To email@gmail.com "),
           const SizedBox(height: 70),
-          CustomTextForm(
-            myController: controller.emailController,
-            textForm: 'Email',
-            textHint: 'Enter Your Email',
-            iconData: Icons.email_outlined,
-            boolObscureText: false,
-          ),
+          OtpTextField(
+            filled: true,
+            enabledBorderColor: const Color.fromARGB(161, 72, 72, 72),
+            fieldWidth: 50.0,
+            borderRadius: BorderRadius.circular(15.0),
+            borderWidth: 1.0,
+            showFieldAsBox: true,
+            focusedBorderColor:
+                AppColor.colorGreen, // Set the border color when focused
 
-          const SizedBox(height: 30),
-          CustomButtonAuth(
-            text: "Check",
-            onPressed: () {},
+            onCodeChanged: (String code) {
+              // Handle validation or checks here
+            },
+            onSubmit: (String verificationCode) {
+              controller.goToResetPassword();
+            },
           ),
-          // const SizedBox(height: 10),
-          // TextLoginSingUp(
-          //   onTap: () {
-          //     controller.goToSignup();
-          //   },
-          //   textQues: "Don't have an account? ",
-          //   textGo: "Sign Up",
-          // ),
         ]),
       ),
     );
