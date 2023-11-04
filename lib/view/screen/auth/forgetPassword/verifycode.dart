@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 import 'package:maison_moderne/core/constant/color.dart';
 import 'package:maison_moderne/view/widget/auth/custom_text_min_title.dart';
 
-import '../../../controller/auth/verifycode_controller.dart';
-import '../../widget/auth/custom_text_title.dart';
+import '../../../../controller/auth/verifycode_controller.dart';
+import '../../../widget/auth/custom_text_title.dart';
 
 class VerifyCode extends StatelessWidget {
   const VerifyCode({super.key});

@@ -16,7 +16,7 @@ class Language extends GetView<LocaleController> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                '1'.tr,
+                "1".tr,
                 style: Theme.of(context).textTheme.displayLarge,
               ),
               const SizedBox(height: 60),
@@ -28,9 +28,9 @@ class Language extends GetView<LocaleController> {
                 },
               ),
               CustomButtonLang(
-                textButton: 'Fr',
+                textButton: 'Ar',
                 onPressed: () => {
-                  controller.onChange('fr'),
+                  controller.onChange('ar'),
                   Get.offNamed(AppRoutes.onBoarding)
                 },
               )

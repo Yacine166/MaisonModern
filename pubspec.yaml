@@ -84,10 +84,11 @@ flutter:
           # weight: 700
         # - asset: fonts/Caprasimo-Regular.ttf
   #         style: italic
-    # - family: Caprasimo
-    #   fonts:
-    #     - asset: assets/fonts/Caprasimo-Regular.ttf
-  #         weight: 700
+    - family: 'Amiri'
+      fonts:
+        - asset: assets/fonts/Amiri-Bold.ttf
+        - asset: assets/fonts/Amiri-Regular.ttf
+          
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

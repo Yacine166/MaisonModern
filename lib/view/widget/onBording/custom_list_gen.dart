@@ -13,6 +13,7 @@ class CustomListGenOnBoarding extends StatelessWidget {
       builder: (controller) => Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          const SizedBox(height: 100),
           ...List.generate(
             onBordingList.length,
             (index) => AnimatedContainer(

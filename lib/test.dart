@@ -39,3 +39,14 @@ class Test extends StatelessWidget {
         ));
   }
 }
+
+
+
+
+/* ceate function for check length value and valide  username and email and phone 
+
+// validator fourm text 
+// (val ){
+// 
+// 
+form for make key (controller.FormState)*/

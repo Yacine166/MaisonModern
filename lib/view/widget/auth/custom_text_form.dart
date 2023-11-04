@@ -7,8 +7,10 @@ class CustomTextForm extends StatelessWidget {
       required this.textHint,
       this.myController,
       required this.iconData,
-      required this.boolObscureText});
+      required this.boolObscureText,
+      required this.valid});
   final String textForm;
+  final String? Function(String?) valid;
   final String textHint;
   final IconData iconData;
   final bool boolObscureText;
@@ -16,6 +18,7 @@ class CustomTextForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: valid,
       obscureText: boolObscureText,
       controller: myController,
       decoration: InputDecoration(

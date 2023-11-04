@@ -11,9 +11,16 @@ abstract class LoginController extends GetxController {
 class LoginControllerImp extends LoginController {
   late TextEditingController emailController;
   late TextEditingController passwordController;
+  GlobalKey<FormState> formstate = GlobalKey<FormState>();
 
   @override
-  login() {}
+  login() {
+    var formdata = formstate.currentState;
+    if (formdata!.validate()) {
+      print("Validff");
+    } else
+      print("Not Valid");
+  }
 
   @override
   goToSignup() {

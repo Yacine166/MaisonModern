@@ -2,13 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:maison_moderne/core/constant/routes.dart';
 
-abstract class ForgetPasswordController extends GetxController {
+abstract class CheckEmailController extends GetxController {
   goToVerifyCode();
   checkemail();
 }
 
-class ForgetPasswordControllerImp extends ForgetPasswordController {
+class CheckEmailControllerImp extends CheckEmailController {
   late TextEditingController emailController;
+
+  @override
+  checkemail() {}
+
+  @override
+  goToVerifyCode() {
+    Get.offAllNamed(AppRoutes.verifycodesignup);
+  }
 
   @override
   void onInit() {
@@ -20,13 +28,5 @@ class ForgetPasswordControllerImp extends ForgetPasswordController {
   void dispose() {
     emailController.dispose();
     super.dispose();
-  }
-
-  @override
-  checkemail() {}
-
-  @override
-  goToVerifyCode() {
-    Get.offAllNamed(AppRoutes.verifycode);
   }
 }

@@ -8,7 +8,7 @@ class CustomButtonAuth extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 90, vertical: 40),
+      margin: const EdgeInsets.symmetric(horizontal: 90, vertical: 20),
       child: MaterialButton(
         textColor: Colors.white,
         splashColor: const Color.fromARGB(70, 49, 175, 146),

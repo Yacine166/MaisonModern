@@ -12,9 +12,15 @@ class SignUpControllerImp extends SignUpController {
   late TextEditingController emailController;
   late TextEditingController phoneController;
   late TextEditingController passwordController;
-
+  GlobalKey<FormState> formstate = GlobalKey<FormState>();
   @override
-  signUp() {}
+  signUp() {
+    var formdate = formstate.currentState;
+    if (formdate!.validate()) {
+      return Get.toNamed(AppRoutes.verifycodesignup);
+    } else
+      print("Not Valid");
+  }
 
   @override
   goToLogin() {
